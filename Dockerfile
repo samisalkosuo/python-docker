@@ -15,6 +15,10 @@ RUN ./configure --enable-optimizations --enable-shared
 RUN make install
 
 ENV LD_LIBRARY_PATH /usr/local/lib/python3.8/:/usr/local/lib/
+
+RUN python3.8 -m pip install --upgrade pip
+RUN python3.8 -m pip install wheel
+
 RUN python3.8 -m pip install pyinstaller
 
 RUN alias python=python3.8
